@@ -9,7 +9,9 @@ import { HomeComponent } from './home/home.component';
   imports: [RouterOutlet, HeaderComponent, HomeComponent],
   template: `
     <app-header/>
+    <main>
     <app-home/>
+    </main>
   `,
   styles: [],
 })
