@@ -1,10 +1,10 @@
 <h3>Todos List</h3>
-
+<!-- Render loading if todos not loaded -->
+@if (!todoItems().length) {
+    <p>Loading...</p>
+}
 <ul>
 @for (todo of todoItems(); track $index) {
-    <li class="todos__item">
-        <input type="checkbox" [value]="todo.completed">
-    <label>{{ todo.title }}</label>
-</li>
+    <app-todo-item (todoToggled)="updateTodoItem($event)" [todo]="todo" />
 }
 </ul>
